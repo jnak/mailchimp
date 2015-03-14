@@ -42,7 +42,7 @@ func New(apikey string, https ...bool) (*API, error) {
 	} else {
 		u.Scheme = "http"
 	}
-	u.Host = fmt.Sprintf("%s.api.mailchimp.com", datacenter.FindString(apikey))
+	u.Host = fmt.Sprintf("%sapi.mailchimp.com", datacenter.FindString(apikey))
 	u.Path = "/1.3/"
 	return &API{apikey, u.String() + "?method="}, nil
 }
